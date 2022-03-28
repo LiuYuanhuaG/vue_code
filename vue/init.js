@@ -1,4 +1,5 @@
 import proxyData from './proxy'
+import observe from './observe'
 
 function initState(vm) {
     var options = vm.$options
@@ -12,10 +13,11 @@ function initData(vm) {
     var data = vm.$options.data
     data = vm._data = typeof data === 'function' ? data.call(vm) : data || {}
     for (var key in data) {
-        //使用代理处理数据 劫持数据增加访问、设置的入口
+        //使用代理处理原始数据 劫持数据增加访问、设置的入口
         proxyData(vm, '_data', key)
     }
-
+    // 观察 响应式数据处理
+    observe(data)
 }
 
 export {
