@@ -1,6 +1,4 @@
 import observe from "./observe";
-import observeArray from "./observeArray";
-
 
 // 处理对象数据 添加响应式
 function defineReactiveData(data, key, value) {

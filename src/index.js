@@ -26,8 +26,8 @@ let vm = new Vue({
         }
     }
 })
-vm.list.push({ a: 1 })
+// vm.list.push({ a: 1 })
 // vm.title = 55
-// console.log(vm.title, 'vms');
+console.log(vm.title, this, 'vms');
 // console.log(vm, 'vm');
 // console.log(vm.user.zhangsan, 'vms'); // 这样调用会触发三次监听者vm vm.user vm.user.zhangsan

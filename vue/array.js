@@ -2,12 +2,13 @@ import observeArray from './observeArray'
 import { OBSERVE_ARRAY } from './config'
 
 
-var orgArrMethods = Array.prototype;// 获取数组方法
+var orgArrMethods = Array.prototype;// 获取数组方法原型
+
 var arrayMethods = Object.create(orgArrMethods);//创建数组对象
 
 OBSERVE_ARRAY.map(function (m) {
     arrayMethods[m] = function () {
-        console.log(1);
+        console.log(this);
         var methodsArg = Array.prototype.slice.call(arguments); //获取方法传入的数据
         orgArrMethods[m].apply(this, methodsArg) //调用相应方法 这里不能使用arrayMethods数组对象的方法 会死循环
         var newArray;

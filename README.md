@@ -31,5 +31,18 @@
      ```
 
      
+     
+   - ```js
+     // 在package.json 中配置指令 
+     
+     "scripts": {
+         "dev": "webpack-dev-server",
+         "build":"webpack"
+       },
+     ```
+     
+     
+     
+     
 
 3. 
