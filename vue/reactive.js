@@ -11,7 +11,7 @@ function defineReactiveData(data, key, value) {
         set(newValue) {
             // 判断是否新值 是则替换旧值
             if (newValue === value) return;
-            observeArray(newValue) // 在设置值得时候也有能是对象 所以在此需要在地调用观察者
+            observe(newValue) // 在设置值得时候也有能是对象,数组 所以在此需要在地调用观察者
             value = newValue
         },
         get() {

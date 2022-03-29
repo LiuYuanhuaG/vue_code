@@ -12,6 +12,6 @@ Vue.prototype._init = function (options) {
 
     initState(vm)
 }
-
+window.Vue = Vue
 
 export default Vue
